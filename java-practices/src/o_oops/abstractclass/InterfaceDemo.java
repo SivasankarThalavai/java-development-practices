@@ -8,7 +8,7 @@ package o_oops.abstractclass;
 
 // It can be used to achieve loose coupling.
 
-interface Shape1234 {
+interface Shape1 {
 
 	// Declare fields
 	String objectName = "";
@@ -34,15 +34,24 @@ interface Shape1234 {
 	// Abstract methods
 	double area();
 
+}
+
+interface Shape2 {
+
 	void draw();
 }
 
-class Rectangle1234 implements Shape1234 {
+interface Shape3 {
+
+	void draw1();
+}
+
+class Rectangle1 implements Shape1, Shape2, Shape3 {
 
 	int length, width;
 
 	// Constructor
-	Rectangle1234(int length, int width) {
+	Rectangle1(int length, int width) {
 		// this keyword refers to current instance itself
 		this.length = length;
 		this.width = width;
@@ -57,15 +66,21 @@ class Rectangle1234 implements Shape1234 {
 	public double area() {
 		return (double) (length * width);
 	}
+
+	@Override
+	public void draw1() {
+		// TODO Auto-generated method stub
+
+	}
 }
 
-class Circle1234 implements Shape1234 {
+class Circle1 implements Shape1, Shape2, Shape3 {
 
 	// Attributes of a Circle
 	double pi = 3.14;
 	int radius;
 
-	Circle1234(int radius) {
+	Circle1(int radius) {
 		// This keyword refers to current instance itself
 		this.radius = radius;
 	}
@@ -79,6 +94,11 @@ class Circle1234 implements Shape1234 {
 	public double area() {
 		return (double) ((pi * radius * radius));
 	}
+
+	@Override
+	public void draw1() {
+
+	}
 }
 
 public class InterfaceDemo {
@@ -86,7 +106,7 @@ public class InterfaceDemo {
 	public static void main(String args[]) {
 
 		// Creating the Object of Rectangle class and using shape class reference.
-		Shape1234 reactShape = new Rectangle1234(2, 3);
+		Shape1 reactShape = new Rectangle1(2, 3);
 		System.out.println("Area of rectangle: " + reactShape.area());
 
 		// Calling deafult MEthod of Shape interface with rectanle ref
@@ -94,11 +114,11 @@ public class InterfaceDemo {
 		reactShape.dragTo(0, 0);
 
 		// Calling Static MEthod of Shape interface
-		Shape1234.moveTo(1, 2);
+		Shape1.moveTo(1, 2);
 		System.out.println(" ");
 
 		// Creating the Objects of circle class
-		Shape1234 circle = new Circle1234(2);
+		Shape1 circle = new Circle1(2);
 		System.out.println("Area of circle: " + circle.area());
 
 	}

@@ -23,7 +23,13 @@ abstract class Shape {
 	abstract public void draw();
 }
 
-class Rectangle extends Shape {
+/*
+ * abstract class Shape1 {
+ * 
+ * }
+ */
+
+class Rectangle extends Shape { // ,Shape1
 
 	int length, width;
 

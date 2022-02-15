@@ -1,4 +1,4 @@
-package o_oops;
+package o_oops.coupling;
 
 interface Vehicle {
 
