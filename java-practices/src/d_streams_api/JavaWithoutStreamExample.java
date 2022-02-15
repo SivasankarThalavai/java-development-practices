@@ -10,6 +10,7 @@ public class JavaWithoutStreamExample {
 	public static void main(String[] args) {
 
 		// Adding Products
+		// Adding Products
 		productsList.add(new Product(1, "HP Pavillion", 28000f, "HP"));
 		productsList.add(new Product(2, "Lenevo Thinkpad", 78000f, "Lenevo"));
 		productsList.add(new Product(3, "Dell lattitude", 68000f, "Dell"));
