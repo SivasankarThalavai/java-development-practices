@@ -4,25 +4,25 @@ public class TransposeMatrix {
 
 	private static final int N = 4;
 
-	private static void transpose(int A[][], int B[][]) {
+	private static void transpose(int original[][], int transpose[][]) {
 		int i, j;
 		for (i = 0; i < N; i++)
 			for (j = 0; j < N; j++)
-				B[i][j] = A[j][i];
+				transpose[i][j] = original[j][i];
 	}
 
 	public static void main(String[] args) {
 
-		int A[][] = { { 1, 1, 1, 1 }, { 2, 2, 2, 2 }, { 3, 3, 3, 3 }, { 4, 4, 4, 4 } };
+		int original[][] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12, 13 }, { 14, 15, 16, 17 } };
 
-		int B[][] = new int[N][N], i, j;
+		int transpose[][] = new int[N][N], i, j;
 
-		transpose(A, B);
+		transpose(original, transpose);
 
 		System.out.print("original matrix is \n");
 		for (i = 0; i < N; i++) {
 			for (j = 0; j < N; j++) {
-				System.out.print(A[i][j] + " ");
+				System.out.print(original[i][j] + " ");
 			}
 			System.out.print("\n");
 		}
@@ -30,7 +30,7 @@ public class TransposeMatrix {
 		System.out.print("Result matrix is \n");
 		for (i = 0; i < N; i++) {
 			for (j = 0; j < N; j++) {
-				System.out.print(B[i][j] + " ");
+				System.out.print(transpose[i][j] + " ");
 			}
 			System.out.print("\n");
 		}
