@@ -1,4 +1,4 @@
-package h_threads;
+package h_multi_threading;
 
 class Producer extends Thread {
 
