@@ -7,10 +7,14 @@ class Jenkins {
 	ProdDeployment prod; // new requirement
 
 	// modify constructor for new requirement
-	public Jenkins(DevDeployment dev, QADeployment qa, ProdDeployment prod) {
-
+	public Jenkins(DevDeployment dev, QADeployment qa) {
 		this.dev = dev;
 		this.qa = qa;
+	}
+
+	// modify constructor for new requirement
+	public Jenkins(DevDeployment dev, QADeployment qa, ProdDeployment prod) {
+		this(dev, qa); // //reusing constructor
 		this.prod = prod;// add
 	}
 
