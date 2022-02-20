@@ -17,7 +17,25 @@ class Jenkins1 {
 
 interface IDeployer {
 
+	// checked in java SE 17
+	public static final int a = 0; // static final variable
+	public int b = 0; // non static / non final varaile
+	public final int c = 0; // non static
+
 	void deploy();
+
+	default void metaData() {
+		privateMethod();
+		System.out.println("Metadata about an env.");
+	}
+
+	static void staticMethod() {
+		System.out.println("staticMEthod");
+	}
+
+	private void privateMethod() {
+		System.out.println("private MEthod");
+	}
 
 }
 
@@ -57,6 +75,9 @@ public class LooseCouplingDemo {
 		// new requirement
 		Jenkins1 prodJEnkins = new Jenkins1(new ProdDeployment1());
 		prodJEnkins.doDeployment();
+
+		// static method
+		IDeployer.staticMethod();
 
 	}
 
