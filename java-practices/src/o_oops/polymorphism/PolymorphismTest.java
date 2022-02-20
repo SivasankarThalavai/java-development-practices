@@ -29,7 +29,8 @@ class Circle extends Shape {
 
 class Triangle extends Shape {
 	void draw() {
-		System.out.println("drawing triangle...");
+		int a = 0;
+		System.out.println("drawing triangle..." + a);
 	}
 }
 
